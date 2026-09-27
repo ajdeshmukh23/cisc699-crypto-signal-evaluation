@@ -1,0 +1,97 @@
+CISC 699 starter workspace readiness evidence
+Recorded UTC: 2026-09-14T18:14:31.756Z
+Working directory: /Users/ajink/Documents/Harrisburg/699/project
+
+Evidence covers the starter configuration validator only.
+No historical dataset, backtest, supervisor approval, remote repository or experimental result is present.
+
+$ node --version
+Exit code: 0
+v24.4.1
+
+
+$ git --version
+Exit code: 0
+git version 2.50.1 (Apple Git-155)
+
+
+$ uname -sm
+Exit code: 0
+Darwin arm64
+
+
+$ node --check src/crypto_eval/config.js
+Exit code: 0
+
+
+
+$ node --check src/crypto_eval/cli.js
+Exit code: 0
+
+
+
+$ node src/crypto_eval/cli.js --help
+Exit code: 0
+CISC 699 Crypto Signal Evaluation Starter
+
+Usage:
+  node src/crypto_eval/cli.js --help
+  node src/crypto_eval/cli.js validate <configuration.json>
+
+Implemented: proposal configuration structure validation.
+Not implemented: data ingestion, indicators, backtesting, metrics, or dashboard integration.
+This program does not request market data, connect to a broker, or place orders.
+
+
+$ node src/crypto_eval/cli.js validate config/proposal.example.json
+Exit code: 0
+Configuration structure valid.
+Evaluation readiness: pending dataset access and verified strategy definitions.
+Proposal assumptions only; no historical evaluation was executed.
+
+
+$ node src/crypto_eval/cli.js unsupported-command
+Exit code: 2
+
+Unknown command or arguments. Use --help.
+
+In-memory negative case: replace feeBpsPerSide with -1.
+Rejected as expected: true
+["execution.feeBpsPerSide must be a finite number between 0 and 1000."]
+
+Configuration SHA256:
+937ed604889f0442358aec11cdec5612aff051d6e78c44be5e009fdb839fad17
+
+$ git rev-parse --show-toplevel
+Exit code: 0
+/Users/ajink/Documents/Harrisburg/699/project
+
+
+$ git status --short
+Exit code: 0
+?? .gitignore
+?? .nvmrc
+?? README.md
+?? config/
+?? docs/
+?? evidence/
+?? package.json
+?? src/
+
+
+Actual file inventory, excluding .git:
+.gitignore
+.nvmrc
+config/proposal.example.json
+docs/ARCHITECTURE.md
+docs/BACKLOG.md
+docs/ENGINEERING_LOG.md
+docs/ENVIRONMENT.md
+evidence/readiness.txt
+package.json
+README.md
+src/crypto_eval/cli.js
+src/crypto_eval/config.js
+
+Starter smoke check outcome: PASS
+Git has been initialized locally. No commit or remote has been created.

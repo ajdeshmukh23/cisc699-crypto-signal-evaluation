@@ -1,0 +1,20 @@
+Source working tree at copy time, 2026-09-15
+ M backend/package-lock.json
+ M backend/package.json
+ M backend/src/index.js
+ M database/init.sql
+ M frontend/src/App.css
+ M frontend/src/App.tsx
+?? backend/src/middleware/
+?? backend/src/routes/auth.js
+?? backend/src/routes/auth.test.js
+?? backend/src/routes/portfolio.js
+?? backend/src/routes/portfolio.test.js
+?? docs/
+?? frontend/src/components/AddHoldingModal.test.tsx
+?? frontend/src/components/AddHoldingModal.tsx
+?? frontend/src/components/AuthModal.test.tsx
+?? frontend/src/components/AuthModal.tsx
+?? frontend/src/components/Portfolio.test.tsx
+?? frontend/src/components/Portfolio.tsx
+?? frontend/src/context/

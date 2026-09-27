@@ -1,0 +1,31 @@
+Baseline checks recorded September 15, 2026
+Scope: copied source syntax, JSON readability and 699 validator smoke checks.
+Application build, test suites, database and market-data access were not run.
+
+$ /opt/homebrew/bin/node --version
+exit=0
+v24.4.1
+
+
+PASS: JavaScript syntax for 18 files (backend, frontend Jest config, 699 validator).
+PASS: 7 JSON manifests/configuration files parse. TypeScript is not type-checked by node --check.
+$ /opt/homebrew/bin/node src/crypto_eval/cli.js --help
+exit=0
+CISC 699 Crypto Signal Evaluation Starter
+
+Usage:
+  node src/crypto_eval/cli.js --help
+  node src/crypto_eval/cli.js validate <configuration.json>
+
+Implemented: proposal configuration structure validation.
+Not implemented: data ingestion, indicators, backtesting, metrics, or dashboard integration.
+This program does not request market data, connect to a broker, or place orders.
+
+
+$ /opt/homebrew/bin/node src/crypto_eval/cli.js validate config/proposal.example.json
+exit=0
+Configuration structure valid.
+Evaluation readiness: pending dataset access and verified strategy definitions.
+Proposal assumptions only; no historical evaluation was executed.
+
+

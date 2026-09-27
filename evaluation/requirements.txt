@@ -1,0 +1,9 @@
+# Core (installed and verified in Week 1)
+pandas>=2.2
+numpy>=2.0
+requests>=2.32
+pytest>=8.0
+# Modelling (install at Hard Stop 3)
+scikit-learn>=1.5
+lightgbm>=4.5
+torch>=2.5        # LSTM; uses Apple MPS backend on arm64

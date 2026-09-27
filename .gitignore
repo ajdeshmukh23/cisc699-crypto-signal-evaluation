@@ -1,0 +1,17 @@
+node_modules/
+.DS_Store
+.env
+.env.*
+!.env.example
+!.env.sample
+data/raw/
+data/processed/
+results/
+*.log
+coverage/
+dist/
+build/
+*.tsbuildinfo
+.venv/
+__pycache__/
+.pytest_cache/

@@ -1,0 +1,30 @@
+digraph G {
+  rankdir=TB; bgcolor="white"; pad=0.3; nodesep=0.35; ranksep=0.55; newrank=true;
+  node [fontname="Helvetica", fontsize=11, shape=box, style="rounded,filled", fillcolor="#F3F4F6", color="#6B7280"];
+  edge [fontname="Helvetica", fontsize=9, color="#4B5563"];
+
+  user [label="Retail crypto trader\n(user)", fillcolor="#FEF3C7", color="#B45309"];
+  arch [label="Binance public data archive\n(historical 1h candles)", fillcolor="#E5E7EB"];
+  live [label="Binance.US API\n(live prices)", fillcolor="#E5E7EB"];
+
+  subgraph cluster_sys {
+    label="CISC 699 system boundary"; fontname="Helvetica-Bold"; fontsize=11; style="rounded,dashed"; color="#2563EB";
+    subgraph cluster_old { label="GRAD 695 dashboard (existing, reused)"; fontsize=10; style="rounded"; color="#9CA3AF";
+      ui [label="React dashboard"]; api [label="Node / Express API"]; rules [label="Rule-based\nindicator signals"]; db [label="PostgreSQL", shape=cylinder];
+    }
+    subgraph cluster_new { label="Python evaluation module (NEW)"; fontsize=10; style="rounded"; color="#2563EB";
+      ingest [label="Data ingest &\nquality checks", fillcolor="#DBEAFE", color="#2563EB"];
+      feat [label="Feature builder\n(corrected indicators)", fillcolor="#DBEAFE", color="#2563EB"];
+      ml [label="ML models\nLogReg · LightGBM · LSTM", fillcolor="#DBEAFE", color="#2563EB"];
+      bt [label="Walk-forward backtester\n(fees, slippage, next-bar fills)", fillcolor="#DBEAFE", color="#2563EB"];
+      rep [label="Results store &\nreport export", fillcolor="#DBEAFE", color="#2563EB"];
+    }
+  }
+
+  arch -> ingest [label="monthly ZIPs"];
+  live -> api [label="WebSocket"];
+  ingest -> feat; feat -> ml; ml -> bt [label="ML signals"];
+  rules -> bt [label="baseline signals"];
+  bt -> rep [label="trade ledgers"]; rep -> api [label="metrics via API"];
+  api -> db; api -> ui; ui -> user [label="signals + evidence"];
+}

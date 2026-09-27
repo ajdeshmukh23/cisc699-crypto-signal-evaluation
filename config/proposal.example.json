@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "proposalOnly": true,
+  "symbol": "BTCUSD",
+  "timeframe": "1h",
+  "dataset": null,
+  "strategies": ["dashboard_composite", "moving_average_crossover", "buy_and_hold"],
+  "strategyDefinitionStatus": "pending-validation",
+  "execution": {
+    "signalUses": "completed-candles-only",
+    "fillAt": "next-bar-open",
+    "positionMode": "long-only",
+    "feeBpsPerSide": 10,
+    "slippageBpsPerSide": 5
+  },
+  "comparison": {
+    "splitPolicy": "chronological",
+    "parametersLockedBeforeEvaluation": true
+  }
+}

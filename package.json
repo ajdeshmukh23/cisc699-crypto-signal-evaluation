@@ -1,0 +1,14 @@
+{
+  "name": "cisc699-crypto-signal-evaluation",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Starter configuration validator for a proposed historical signal evaluation extension",
+  "engines": { "node": ">=24 <25" },
+  "scripts": {
+    "help": "node src/crypto_eval/cli.js --help",
+    "validate": "node src/crypto_eval/cli.js validate config/proposal.example.json"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
